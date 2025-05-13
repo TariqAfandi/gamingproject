@@ -35,8 +35,9 @@ public class AdvancedDoor : MonoBehaviour
             door.position = Vector3.Lerp(door.position, closedPosition, Time.deltaTime * speed);
         }
     }
+ 
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
