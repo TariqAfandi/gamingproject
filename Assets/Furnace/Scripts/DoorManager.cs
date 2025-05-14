@@ -36,6 +36,10 @@ public class DoorManager : MonoBehaviour
         }
     }
 
+    public int GetRemainingSwitches()
+    {
+        return totalSwitches - activatedSwitches;
+    }
 
     void Update()
     {

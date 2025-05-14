@@ -1,3 +1,5 @@
+using Unity.FPS.Game;
+using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.UI; // If using UI Text
 // using TMPro; // Use this if you’re using TextMeshPro
@@ -35,7 +37,10 @@ public class SwitchTrigger : MonoBehaviour
         }
 
         if (doorManager != null)
+        {
             doorManager.RegisterSwitchActivated();
+            EventManager.Broadcast(new SwitchActivatedEvent(doorManager.GetRemainingSwitches()));
+        }
     }
 
     private void OnTriggerEnter(Collider other)
